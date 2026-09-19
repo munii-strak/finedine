@@ -1,0 +1,6 @@
+{
+  "name": "Fine Dine | Fine Dining & Nature Paradise",
+  "description": "Fine Dine is a paradise for your taste buds, a delight in pristine nature. Discover our seasonal menu, reserve your private table, and experience haute cuisine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

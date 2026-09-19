@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cormorant: "Cormorant Garamond", Georgia, serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.text-outline-layered {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+}
+
+.text-outline-layered-gold {
+  -webkit-text-stroke: 1px rgba(198, 168, 105, 0.2);
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+}
+
+.text-outline-solid {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+  color: transparent;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.02);
+  }
+}
+
+@keyframes floatDrift {
+  0% {
+    opacity: 0.8;
+    transform: translate(-40px, 0);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(40px, -15px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translate(-40px, 0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08);
+  }
+}
+
+.animate-float-slow {
+  animation: 8s ease-in-out infinite floatSlow;
+}
+
+.animate-float-drift {
+  animation: 16s ease-in-out infinite floatDrift;
+}
+
+.animate-pulse-glow {
+  animation: 6s ease-in-out infinite pulseGlow;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
