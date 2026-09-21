@@ -14,7 +14,7 @@ import { CompleteMenuModal } from './components/CompleteMenuModal';
 import { DishDetailModal } from './components/DishDetailModal';
 
 export default function App() {
-  const [currency, setCurrency] = useState<Currency>('UAH');
+  const [currency, setCurrency] = useState<Currency>('PKR');
   const [selectedDish, setSelectedDish] = useState<Dish | null>(null);
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
   const [menuInitialCategory, setMenuInitialCategory] = useState('all');

@@ -17,7 +17,7 @@ export const PopularDishes: React.FC<PopularDishesProps> = ({
   const [filterMode, setFilterMode] = useState<'classic' | 'modern' | 'all'>('classic');
 
   const classicDishes = dishesData.filter((dish) =>
-    ['bolognese', 'green-carbonara', 'rack-of-lamb'].includes(dish.id)
+    ['bao-g-grilled-fish', 'bolognese', 'green-carbonara', 'rack-of-lamb'].includes(dish.id)
   );
 
   const modernDishes = dishesData.filter((dish) =>
@@ -50,12 +50,20 @@ export const PopularDishes: React.FC<PopularDishesProps> = ({
         {/* Header and Toggle */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="text-left">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#b5c99a] font-light block mb-2">
-              Popular & Chef's Special
-            </span>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#b5c99a] font-light block">
+                Popular & Chef's Special
+              </span>
+              <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-medium">
+                🇵🇰 Available in Pakistan Only
+              </span>
+            </div>
             <h2 className="font-cormorant text-4xl sm:text-5xl italic text-white font-normal">
               Dishes of the House
             </h2>
+            <p className="text-xs text-neutral-400 font-light mt-1">
+              Freshly prepared daily in Faisalabad · All prices in Pakistani Rupees (PKR / Rs)
+            </p>
           </div>
 
           {/* Filter segment tabs */}

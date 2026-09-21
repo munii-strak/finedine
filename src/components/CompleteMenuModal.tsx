@@ -88,11 +88,16 @@ export const CompleteMenuModal: React.FC<CompleteMenuModalProps> = ({
           {/* Modal Header */}
           <div className="p-5 sm:p-6 border-b border-white/10 flex items-center justify-between bg-[#15191e]/80">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#b5c99a] font-light block mb-0.5">
-                Gastronomic Collection
-              </span>
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="text-xs uppercase tracking-[0.25em] text-[#b5c99a] font-light block">
+                  Fine Dine By Bao G
+                </span>
+                <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-medium">
+                  🇵🇰 Available in Pakistan Only
+                </span>
+              </div>
               <h2 className="font-cormorant text-2xl sm:text-3xl italic text-white font-normal">
-                Fine Dine Digital Menu & Offerings
+                Menu & Offerings · Susan Road, Faisalabad
               </h2>
             </div>
             <button

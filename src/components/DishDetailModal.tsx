@@ -82,9 +82,15 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
               <h3 className="font-cormorant text-3xl sm:text-4xl italic text-white font-normal">
                 {dish.name}
               </h3>
-              <span className="font-mono text-xl sm:text-2xl font-bold text-[#c6a869]">
-                {formatPrice(dish, currentCurrency)}
-              </span>
+              <div className="sm:text-right">
+                <span className="font-mono text-xl sm:text-2xl font-bold text-[#c6a869] block">
+                  {formatPrice(dish, currentCurrency)}
+                </span>
+                <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1 sm:justify-end">
+                  <span>🇵🇰</span>
+                  <span>Available in Pakistan Only</span>
+                </span>
+              </div>
             </div>
 
             <p className="text-neutral-300 text-sm sm:text-base font-light leading-relaxed">

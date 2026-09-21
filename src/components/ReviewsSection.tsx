@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Star, ChevronLeft, ChevronRight, PenLine, X, CheckCircle } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, PenLine, X, CheckCircle, MapPin, ExternalLink } from 'lucide-react';
 import { Review } from '../types';
-import { initialReviews } from '../data/restaurantData';
+import { initialReviews, restaurantInfo } from '../data/restaurantData';
 
 export const ReviewsSection: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>(initialReviews);
@@ -57,11 +57,15 @@ export const ReviewsSection: React.FC = () => {
     <section id="reviews" className="py-24 sm:py-32 bg-[#0d0f11] relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header row */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-neutral-400 font-light block mb-2">
-              Learn more about
-            </span>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#c6a869] font-medium block">
+                Google Verified Reviews
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#b5c99a]" />
+              <span className="text-xs text-neutral-400 font-light">Susan Road, Faisalabad</span>
+            </div>
             <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-6xl italic text-white font-normal">
               What Our Visitors Say
             </h2>
@@ -92,6 +96,55 @@ export const ReviewsSection: React.FC = () => {
           </div>
         </div>
 
+        {/* Rating Banner Summary Card */}
+        <div className="mb-10 bg-[#13161a] border border-white/10 rounded-2xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="flex items-baseline gap-2">
+              <span className="text-3xl sm:text-4xl font-semibold text-white font-sans">
+                {restaurantInfo.rating.toFixed(1)}
+              </span>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1 text-[#c6a869]">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={15}
+                      className={i < Math.floor(restaurantInfo.rating) ? 'fill-[#c6a869]' : 'text-neutral-600'}
+                    />
+                  ))}
+                </div>
+                <span className="text-[11px] text-neutral-400">
+                  {restaurantInfo.reviewCount} customer reviews
+                </span>
+              </div>
+            </div>
+
+            <div className="hidden md:block w-px h-8 bg-white/10" />
+
+            <div className="hidden md:flex flex-col text-xs text-neutral-300">
+              <span className="text-white font-medium">{restaurantInfo.priceRange}</span>
+              <span className="text-[11px] text-neutral-400">Reported price per person</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5 text-xs text-neutral-300 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+              <MapPin size={13} className="text-[#b5c99a]" />
+              <span>Officer Colony 1, Faisalabad</span>
+            </div>
+
+            <a
+              href={restaurantInfo.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-[#b5c99a] hover:text-white flex items-center gap-1 transition-colors underline"
+            >
+              <span>View on Maps</span>
+              <ExternalLink size={12} />
+            </a>
+          </div>
+        </div>
+
         {/* Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Decorative Image Tile */}
@@ -103,12 +156,18 @@ export const ReviewsSection: React.FC = () => {
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover filter brightness-85 contrast-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-center">
-                <p className="font-cormorant italic text-xl text-white">
-                  "A paradise for your taste buds"
+                <span className="text-[10px] uppercase tracking-widest text-[#b5c99a] font-medium block mb-1">
+                  Fine Dine By Bao G
+                </span>
+                <p className="font-cormorant italic text-xl text-white mb-2">
+                  "Best Restaurant in Faisalabad"
                 </p>
-                <div className="flex items-center justify-center gap-1 mt-2 text-[#c6a869]">
+                <p className="text-xs text-neutral-300 font-light max-w-xs mx-auto">
+                  Susan Road, opposite Faizan e Madina. Open until 1:00 AM.
+                </p>
+                <div className="flex items-center justify-center gap-1 mt-3 text-[#c6a869]">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={14} className="fill-[#c6a869]" />
                   ))}

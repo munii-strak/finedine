@@ -1,10 +1,10 @@
-export type Currency = 'UAH' | 'USD' | 'EUR';
+export type Currency = 'PKR' | 'USD' | 'EUR';
 
 export interface Dish {
   id: string;
   name: string;
   category: 'pasta' | 'grill' | 'breakfast' | 'dinner' | 'snacks' | 'burgers' | 'shawarma' | 'street-food' | 'dessert' | 'drinks' | 'wine';
-  priceUAH: number;
+  pricePKR: number;
   priceUSD: number;
   priceEUR: number;
   description: string;
@@ -42,11 +42,26 @@ export interface Reservation {
 }
 
 export interface RestaurantInfo {
+  name: string;
+  byLine: string;
+  tagline: string;
   address: string;
+  landmark: string;
+  colony: string;
+  city: string;
+  country: string;
+  postalCode: string;
+  plusCode: string;
   hours: string;
+  closingTime: string;
   phone: string;
-  phoneSecondary: string;
+  phoneRaw: string;
   email: string;
+  rating: number;
+  reviewCount: number;
+  priceRange: string;
+  services: string[];
   story: string;
   menuStory: string;
+  googleMapsUrl: string;
 }

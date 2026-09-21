@@ -196,23 +196,23 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-6">
                   <span className="text-xs uppercase tracking-[0.25em] text-[#c6a869] font-light block mb-2">
-                    Culinary Craft
+                    Culinary Craft · Pakistan Specials
                   </span>
                   <h3 className="font-cormorant text-3xl sm:text-4xl lg:text-5xl italic text-white font-normal mb-4">
                     Seasonal Chef's Tasting Menus
                   </h3>
                   <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed mb-6">
-                    Every season, our culinary artists curate an exclusive 5-course gastronomic journey using organic vegetables from the Fine Dine greenhouse, prime aged meats, and rare Ukrainian truffles.
+                    Curated exclusively by Chef Bao G on Susan Road, showcasing river fish delicacies, charcoal BBQ flights, and artisan platters prepared with premium Pakistani spices and local farm-fresh ingredients.
                   </p>
 
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 text-xs">
-                      <span className="text-white font-medium">Summer Truffle & Dry-Aged Beef Flight</span>
-                      <span className="text-[#c6a869] font-mono font-semibold">1,450 UAH</span>
+                      <span className="text-white font-medium">Chef Bao G Fried & Grilled Fish Flight</span>
+                      <span className="text-[#c6a869] font-mono font-semibold">Rs 2,850</span>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 text-xs">
-                      <span className="text-white font-medium">Garden Botanics & Seafood Tasting</span>
-                      <span className="text-[#c6a869] font-mono font-semibold">1,600 UAH</span>
+                      <span className="text-white font-medium">Grand Family Sizzle Feast Platter (4-6 persons)</span>
+                      <span className="text-[#c6a869] font-mono font-semibold">Rs 4,500</span>
                     </div>
                   </div>
 
@@ -249,33 +249,46 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-6">
-                  <span className="text-xs uppercase tracking-[0.25em] text-[#d8f3dc] font-light block mb-2">
-                    At Your Home
-                  </span>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#182616] border border-emerald-500/40 text-emerald-300 text-xs font-medium mb-3">
+                    <span>🇵🇰</span>
+                    <span>Available in Pakistan Only</span>
+                  </div>
                   <h3 className="font-cormorant text-3xl sm:text-4xl lg:text-5xl italic text-white font-normal mb-4">
-                    Fine Dine Gourmet Delivery & Catering
+                    Fine Dine Delivery & Banquet Catering
                   </h3>
                   <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed mb-6">
-                    Enjoy haute cuisine in the comfort of your private residence. Packed with eco-friendly thermal preservation to ensure optimal plating temperature and taste integrity.
+                    Our food delivery is exclusively available across Faisalabad, Pakistan. Hot, insulated packing preserves the crispy batter of our fish and the smoky char of our steaks. Event catering is available across Punjab & Pakistan.
                   </p>
 
-                  <div className="flex flex-col gap-2 text-xs text-neutral-300 mb-6">
+                  <div className="flex flex-col gap-2.5 text-xs text-neutral-300 mb-6">
                     <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#b5c99a]" />
-                      <span>Complimentary delivery across Odesa on orders over 1,000 UAH</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <span>Direct express delivery across Faisalabad (Susan Road, D-Ground, Officer Colony, Kohinoor, Peoples Colony)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#b5c99a]" />
-                      <span>Estimated delivery time: 35-45 minutes</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <span>Complimentary delivery in Faisalabad on orders over Rs 2,500</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <span>Estimated delivery time: 30–45 minutes within city limits</span>
                     </div>
                   </div>
 
-                  <button
-                    onClick={onOpenMenu}
-                    className="px-6 py-2.5 rounded-full bg-white text-[#0d0f11] font-medium text-xs sm:text-sm tracking-wider uppercase hover:bg-neutral-200 transition-colors cursor-pointer"
-                  >
-                    Order Online Delivery
-                  </button>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <a
+                      href="tel:+923017864478"
+                      className="px-6 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-[#0d0f11] font-semibold text-xs sm:text-sm tracking-wider uppercase transition-colors"
+                    >
+                      Call for Delivery (0301 7864478)
+                    </a>
+                    <button
+                      onClick={onOpenMenu}
+                      className="px-6 py-2.5 rounded-full bg-white/10 text-white font-medium text-xs sm:text-sm tracking-wider uppercase hover:bg-white/20 transition-colors cursor-pointer"
+                    >
+                      View Delivery Menu
+                    </button>
+                  </div>
                 </div>
 
                 <div className="lg:col-span-6">

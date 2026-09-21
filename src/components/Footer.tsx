@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUp, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Check } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin, Instagram, Facebook, Twitter, Check, ExternalLink, Navigation } from 'lucide-react';
 import { restaurantInfo } from '../data/restaurantData';
 
 export const Footer: React.FC = () => {
@@ -26,12 +26,28 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Col 1 & 2: Brand Story */}
           <div className="lg:col-span-2 space-y-4">
-            <span className="font-cormorant text-4xl italic text-white font-normal block">
-              Fine Dine
-            </span>
+            <div>
+              <span className="font-cormorant text-4xl italic text-white font-normal block leading-none">
+                Fine Dine
+              </span>
+              <span className="text-xs uppercase tracking-[0.25em] text-[#c6a869] font-medium font-sans mt-1 block">
+                By Bao G
+              </span>
+            </div>
             <p className="text-neutral-400 font-light max-w-sm text-xs sm:text-sm leading-relaxed">
-              A paradise for your taste buds, a delight in the pristine nature. Experience culinary artistry where nature and gastronomy harmonize.
+              Faisalabad's celebrated culinary destination on Susan Road. Famous for golden crispy fried & charcoal grilled fish, gourmet burgers, artisan shawarma, and late-night family gatherings.
             </p>
+
+            <div className="pt-1 flex flex-wrap gap-2 text-[11px] text-neutral-300">
+              <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-medium flex items-center gap-1">
+                <span>🇵🇰</span>
+                <span>Available in Pakistan Only</span>
+              </span>
+              <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10">Dine-in</span>
+              <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10">Takeout</span>
+              <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10">Faisalabad Delivery</span>
+              <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">♿ Wheelchair Accessible</span>
+            </div>
 
             <div className="flex items-center gap-3 pt-2">
               <a
@@ -71,8 +87,9 @@ export const Footer: React.FC = () => {
             </h4>
             <div className="space-y-1.5 font-light">
               <p className="text-white font-normal">Monday – Sunday</p>
-              <p>9:00 AM – 11:00 PM</p>
-              <p className="text-neutral-500 pt-1">Kitchen closes at 10:30 PM</p>
+              <p className="text-emerald-400 font-medium">1:00 PM – 1:00 AM</p>
+              <p className="text-neutral-400 text-[11px] pt-1">Open Daily · Closes 1:00 AM</p>
+              <p className="text-[#c6a869] text-[11px]">Popular rush: 6:00 PM – 10:00 PM</p>
             </div>
           </div>
 
@@ -84,11 +101,14 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 font-light">
               <div className="flex items-start gap-2">
                 <MapPin size={13} className="text-[#b5c99a] shrink-0 mt-0.5" />
-                <span>{restaurantInfo.address}</span>
+                <span className="leading-snug">{restaurantInfo.address}</span>
+              </div>
+              <div className="text-[11px] text-neutral-400 pl-5 font-mono">
+                {restaurantInfo.plusCode}
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={13} className="text-[#b5c99a] shrink-0" />
-                <a href={`tel:${restaurantInfo.phone}`} className="hover:text-white transition-colors">
+                <a href={`tel:${restaurantInfo.phoneRaw}`} className="hover:text-white transition-colors">
                   {restaurantInfo.phone}
                 </a>
               </div>
@@ -98,16 +118,27 @@ export const Footer: React.FC = () => {
                   {restaurantInfo.email}
                 </a>
               </div>
+              <div className="pt-1 pl-5">
+                <a
+                  href={restaurantInfo.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-[#b5c99a] hover:underline"
+                >
+                  <Navigation size={12} />
+                  <span>Get Directions on Google Maps</span>
+                </a>
+              </div>
             </div>
           </div>
 
           {/* Col 5: Newsletter */}
           <div className="space-y-3">
             <h4 className="text-white text-xs uppercase tracking-wider font-medium">
-              Private Gastronomy Club
+              Family Feasts Club
             </h4>
             <p className="font-light text-[11px] leading-relaxed">
-              Subscribe to receive private invitations to seasonal tasting menus and chef masterclasses.
+              Subscribe for weekend chef specials, fish season inaugurations, and seasonal promotions in Faisalabad.
             </p>
 
             {isSubscribed ? (
@@ -122,7 +153,7 @@ export const Footer: React.FC = () => {
                   required
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="Enter your email address"
+                  placeholder="Enter your email or phone"
                   className="w-full bg-[#14171a] border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#b5c99a]"
                 />
                 <button
@@ -139,7 +170,7 @@ export const Footer: React.FC = () => {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[11px] font-light text-neutral-400">
-            &copy; {new Date().getFullYear()} Fine Dine Restaurant. All rights reserved.
+            &copy; {new Date().getFullYear()} Fine Dine By Bao G. Susan Road, Faisalabad, Pakistan · Available in Pakistan Only. All rights reserved.
           </p>
 
           <button
