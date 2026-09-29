@@ -50,17 +50,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onOpenMenu }) => 
               </span>
               <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Open · Closes 1 AM</span>
+                <span>{restaurantInfo.hours}</span>
+              </span>
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs font-light hidden sm:inline-flex items-center gap-1.5">
+                <span className="text-emerald-400">✓</span>
+                <span>Dine-in</span>
+                <span className="text-neutral-500">·</span>
+                <span className="text-emerald-400">✓</span>
+                <span>Takeout</span>
               </span>
             </motion.div>
 
             {/* Layered decorative stroke background */}
             <div className="absolute -top-10 left-0 -z-10 opacity-25 select-none pointer-events-none hidden sm:block">
               <span className="font-cormorant text-6xl sm:text-7xl lg:text-8xl italic block text-outline-layered tracking-tight leading-none">
-                Fine Dine
+                Domatos
               </span>
               <span className="font-cormorant text-5xl sm:text-6xl lg:text-7xl italic block text-outline-layered tracking-tight leading-none mt-1">
-                By Bao G
+                Pizza
               </span>
             </div>
 
@@ -71,20 +78,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onOpenMenu }) => 
             >
               <div className="mb-2">
                 <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#c6a869] font-medium block">
-                  Best Restaurant in Faisalabad
+                  {restaurantInfo.category} · Faisalabad · 4.9 ★ (18)
                 </span>
               </div>
 
               <h1 className="font-cormorant text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-normal leading-[1.06] tracking-tight text-white mb-4">
-                <span className="block italic">Welcome</span>
-                <span className="block italic">to Fine Dine</span>
-                <span className="block italic text-[#e3dac9] text-3xl sm:text-4xl md:text-5xl font-light">
-                  By Bao G
-                </span>
+                <span className="block italic">Welcome to</span>
+                <span className="block italic text-[#e3dac9]">Domatos Pizza</span>
               </h1>
 
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-6 max-w-lg">
-                Faisalabad's celebrated destination on Susan Road for famous fried & charcoal grilled fish, gourmet burgers, artisan shawarmas, barbecue, and family feasts.
+                Faisalabad’s 4.9-star pizza and fast food destination on Dr. Tusi Rd. Savor signature stone-baked Royal Crown Crust pizzas, loaded cheese calzones, crispy zinger burgers, and loaded pizza fries.
               </p>
 
               {/* Action Buttons */}
@@ -152,15 +156,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onOpenMenu }) => 
               <div className="relative group cursor-pointer" onClick={onOpenMenu}>
                 <div className="relative aspect-square rounded-full overflow-hidden p-2 sm:p-4 transition-transform duration-700 group-hover:scale-[1.02]">
                   <img
-                    src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1000&auto=format&fit=crop"
-                    alt="Bao G Crispy Fried & Charcoal Grilled Fish served fresh"
+                    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000&auto=format&fit=crop"
+                    alt="Domatos Royal Crown Crust Pizza bubbling hot with molten cheese and flavorful toppings"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.8)] filter contrast-105 brightness-95"
                   />
                   <div className="absolute inset-2 sm:inset-4 rounded-full border border-white/10 pointer-events-none" />
                 </div>
 
-                {/* Floating Chef Signature Badge for Fried & Grilled Fish */}
+                {/* Floating Chef Signature Badge */}
                 <div className="absolute -bottom-2 sm:bottom-4 left-4 sm:left-8 bg-[#15181c]/95 backdrop-blur-md border border-[#b5c99a]/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-[#b5c99a]/20 flex items-center justify-center text-[#b5c99a] shrink-0">
                     <UtensilsCrossed size={17} />
@@ -170,7 +174,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onOpenMenu }) => 
                       Storefront Specialty
                     </p>
                     <p className="text-xs sm:text-sm font-cormorant font-semibold text-white">
-                      Bao G Crispy Fried & Grilled Fish
+                      Domatos Royal Crown Crust Pizza
                     </p>
                   </div>
                 </div>
@@ -178,7 +182,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onOpenMenu }) => 
                 {/* Opening Hours & Services badge */}
                 <div className="absolute top-10 right-6 bg-[#15181c]/90 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full text-[11px] text-[#b5c99a] hidden sm:flex items-center gap-1.5">
                   <Clock size={12} />
-                  <span>Open till 1:00 AM</span>
+                  <span>Open · Closes 12 AM</span>
                 </div>
               </div>
             </motion.div>

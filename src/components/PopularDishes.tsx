@@ -14,28 +14,36 @@ export const PopularDishes: React.FC<PopularDishesProps> = ({
   onSelectDish,
 }) => {
   const [favorites, setFavorites] = useState<string[]>([]);
-  const [filterMode, setFilterMode] = useState<'classic' | 'modern' | 'all'>('classic');
+  const [filterMode, setFilterMode] = useState<'pizzas' | 'sides' | 'all'>('pizzas');
 
-  const classicDishes = dishesData.filter((dish) =>
-    ['bao-g-grilled-fish', 'bolognese', 'green-carbonara', 'rack-of-lamb'].includes(dish.id)
+  const pizzaDishes = dishesData.filter((dish) =>
+    [
+      'domatos-crown-crust-pizza',
+      'domatos-fajita-supreme',
+      'domatos-malai-boti-pizza',
+      'domatos-tikka-overload',
+      'domatos-four-cheese-pepperoni',
+      'domatos-stuffed-calzone',
+      'domatos-bbq-chicken-pizza',
+      'domatos-veggie-supreme-pizza',
+    ].includes(dish.id)
   );
 
-  const modernDishes = dishesData.filter((dish) =>
+  const sidesDishes = dishesData.filter((dish) =>
     [
-      'fine-dine-zinger-supreme',
-      'damascus-chicken-shawarma',
-      'wagyu-truffle-smash-burger',
-      'royal-lamb-beef-shawarma-platter',
-      'parmesan-truffle-fries',
+      'domatos-loaded-pizza-fries',
+      'domatos-cheesy-garlic-bread',
+      'domatos-grand-family-pizza-feast',
+      'domatos-chilled-cola-cooler',
     ].includes(dish.id)
   );
 
   const displayedDishes =
-    filterMode === 'classic'
-      ? classicDishes
-      : filterMode === 'modern'
-      ? modernDishes
-      : [...classicDishes, ...modernDishes];
+    filterMode === 'pizzas'
+      ? pizzaDishes
+      : filterMode === 'sides'
+      ? sidesDishes
+      : [...pizzaDishes, ...sidesDishes];
 
   const toggleFavorite = (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
@@ -62,31 +70,31 @@ export const PopularDishes: React.FC<PopularDishesProps> = ({
               Dishes of the House
             </h2>
             <p className="text-xs text-neutral-400 font-light mt-1">
-              Freshly prepared daily in Faisalabad · All prices in Pakistani Rupees (PKR / Rs)
+              Freshly stone-baked daily in Faisalabad · All prices in Pakistani Rupees (PKR / Rs)
             </p>
           </div>
 
           {/* Filter segment tabs */}
           <div className="flex items-center rounded-full bg-[#15191d] border border-white/10 p-1 self-start md:self-auto text-xs">
             <button
-              onClick={() => setFilterMode('classic')}
+              onClick={() => setFilterMode('pizzas')}
               className={`px-4 py-2 rounded-full transition-all cursor-pointer ${
-                filterMode === 'classic'
+                filterMode === 'pizzas'
                   ? 'bg-[#2b3327] text-[#b5c99a] font-medium border border-[#b5c99a]/30 shadow-sm'
                   : 'text-neutral-400 hover:text-white'
               }`}
             >
-              Classic Fine Dining
+              Signature Pizzas
             </button>
             <button
-              onClick={() => setFilterMode('modern')}
+              onClick={() => setFilterMode('sides')}
               className={`px-4 py-2 rounded-full transition-all cursor-pointer ${
-                filterMode === 'modern'
+                filterMode === 'sides'
                   ? 'bg-[#332b1a] text-[#c6a869] font-medium border border-[#c6a869]/30 shadow-sm'
                   : 'text-neutral-400 hover:text-white'
               }`}
             >
-              Street Gourmet & Grill
+              Specialty Crusts & Combos
             </button>
             <button
               onClick={() => setFilterMode('all')}
@@ -96,7 +104,7 @@ export const PopularDishes: React.FC<PopularDishesProps> = ({
                   : 'text-neutral-400 hover:text-white'
               }`}
             >
-              All Offerings
+              Complete Pizza Menu
             </button>
           </div>
         </div>
@@ -121,7 +129,7 @@ export const PopularDishes: React.FC<PopularDishesProps> = ({
                     referrerPolicy="no-referrer"
                     onError={(e) => {
                       e.currentTarget.src =
-                        'https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=800&auto=format&fit=crop';
+                        'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&auto=format&fit=crop';
                     }}
                     className="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-700 ease-out"
                   />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Calendar, Utensils, Truck, Sparkles } from 'lucide-react';
+import { Calendar, Utensils, ShoppingBag, Sparkles, MapPin, Phone, Clock } from 'lucide-react';
+import { restaurantInfo } from '../data/restaurantData';
 
 interface EventsAndServicesProps {
   onOpenReservation: () => void;
@@ -11,7 +12,7 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
   onOpenReservation,
   onOpenMenu,
 }) => {
-  const [activeTab, setActiveTab] = useState<'events' | 'special-menus' | 'delivery'>('events');
+  const [activeTab, setActiveTab] = useState<'events' | 'special-menus' | 'takeout'>('events');
 
   return (
     <section id="events" className="py-24 sm:py-32 bg-[#0c0e10] relative overflow-hidden border-t border-white/5">
@@ -88,24 +89,24 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
             </button>
 
             <button
-              id="service-tab-delivery"
-              onClick={() => setActiveTab('delivery')}
+              id="service-tab-takeout"
+              onClick={() => setActiveTab('takeout')}
               className={`flex flex-col items-center gap-2.5 p-4 sm:p-5 rounded-3xl border transition-all duration-300 min-w-[90px] sm:min-w-[110px] cursor-pointer ${
-                activeTab === 'delivery'
+                activeTab === 'takeout'
                   ? 'bg-[#161c22] border-[#709775] text-[#d8f3dc] shadow-lg shadow-[#709775]/10 scale-105'
                   : 'bg-[#121519]/80 border-white/10 text-neutral-400 hover:text-white hover:border-white/20'
               }`}
             >
               <div
                 className={`w-12 h-12 rounded-2xl flex items-center justify-center border ${
-                  activeTab === 'delivery'
+                  activeTab === 'takeout'
                     ? 'bg-[#1d2720] border-[#709775]/40 text-[#d8f3dc]'
                     : 'bg-[#181c20] border-white/10 text-neutral-300'
                 }`}
               >
-                <Truck size={18} />
+                <ShoppingBag size={18} />
               </div>
-              <span className="text-xs sm:text-sm font-medium tracking-wide">Delivery</span>
+              <span className="text-xs sm:text-sm font-medium tracking-wide">Takeout & Dine-in</span>
             </button>
           </div>
         </div>
@@ -169,14 +170,14 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
                   <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 shadow-xl group">
                     <img
                       src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1000&auto=format&fit=crop"
-                      alt="Upcoming events at Fine Dine restaurant garden terrace"
+                      alt="Celebrations and family gatherings at Domatos Pizza"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                     <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-neutral-300">
-                      <span className="font-cormorant italic text-sm text-white">Tropical Room & Patio</span>
-                      <span className="text-[#b5c99a] font-medium">Live Saxophone & BBQ</span>
+                      <span className="font-cormorant italic text-sm text-white">Domatos Family Hall</span>
+                      <span className="text-[#b5c99a] font-medium">Pizza Parties & Birthdays</span>
                     </div>
                   </div>
                 </div>
@@ -196,23 +197,23 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-6">
                   <span className="text-xs uppercase tracking-[0.25em] text-[#c6a869] font-light block mb-2">
-                    Culinary Craft · Pakistan Specials
+                    Domatos Master Recipe · Faisalabad
                   </span>
                   <h3 className="font-cormorant text-3xl sm:text-4xl lg:text-5xl italic text-white font-normal mb-4">
-                    Seasonal Chef's Tasting Menus
+                    Signature Pizza Deals & Crown Combos
                   </h3>
                   <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed mb-6">
-                    Curated exclusively by Chef Bao G on Susan Road, showcasing river fish delicacies, charcoal BBQ flights, and artisan platters prepared with premium Pakistani spices and local farm-fresh ingredients.
+                    Handcrafted stone-baked pizzas, Royal Crown crusts, molten mozzarella, and loaded pizza fries prepared fresh with signature Domatos herb sauces.
                   </p>
 
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 text-xs">
-                      <span className="text-white font-medium">Chef Bao G Fried & Grilled Fish Flight</span>
-                      <span className="text-[#c6a869] font-mono font-semibold">Rs 2,850</span>
+                      <span className="text-white font-medium">Domatos Royal Crown Large Pizza Combo (with 1L Drink)</span>
+                      <span className="text-[#c6a869] font-mono font-semibold">Rs 1,450</span>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 text-xs">
-                      <span className="text-white font-medium">Grand Family Sizzle Feast Platter (4-6 persons)</span>
-                      <span className="text-[#c6a869] font-mono font-semibold">Rs 4,500</span>
+                      <span className="text-white font-medium">Grand Domatos Family Pizza Feast (2 Large Pizzas + Loaded Fries + 1.5L)</span>
+                      <span className="text-[#c6a869] font-mono font-semibold">Rs 2,850</span>
                     </div>
                   </div>
 
@@ -227,8 +228,8 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
                 <div className="lg:col-span-6">
                   <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10">
                     <img
-                      src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=1000&auto=format&fit=crop"
-                      alt="Special tasting menu preparation"
+                      src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1000&auto=format&fit=crop"
+                      alt="Domatos handcrafted stone-baked pizza preparation with fresh toppings"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover"
                     />
@@ -238,9 +239,9 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
             </motion.div>
           )}
 
-          {activeTab === 'delivery' && (
+          {activeTab === 'takeout' && (
             <motion.div
-              key="delivery-view"
+              key="takeout-view"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
@@ -251,42 +252,47 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
                 <div className="lg:col-span-6">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#182616] border border-emerald-500/40 text-emerald-300 text-xs font-medium mb-3">
                     <span>🇵🇰</span>
-                    <span>Available in Pakistan Only</span>
+                    <span>Available in Pakistan Only · Fast Food Restaurant</span>
                   </div>
                   <h3 className="font-cormorant text-3xl sm:text-4xl lg:text-5xl italic text-white font-normal mb-4">
-                    Fine Dine Delivery & Banquet Catering
+                    ✓ Dine-in & ✓ Takeout Services
                   </h3>
                   <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed mb-6">
-                    Our food delivery is exclusively available across Faisalabad, Pakistan. Hot, insulated packing preserves the crispy batter of our fish and the smoky char of our steaks. Event catering is available across Punjab & Pakistan.
+                    Enjoy our signature dishes with warm indoor dining or fast fresh takeout directly from our Dr. Tusi Rd location in Faisalabad.
                   </p>
 
                   <div className="flex flex-col gap-2.5 text-xs text-neutral-300 mb-6">
                     <div className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      <span>Direct express delivery across Faisalabad (Susan Road, D-Ground, Officer Colony, Kohinoor, Peoples Colony)</span>
+                      <span><strong>Service options:</strong> ✓ Dine-in · ✓ Takeout</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      <span>Complimentary delivery in Faisalabad on orders over Rs 2,500</span>
+                      <span><strong>Operating Hours:</strong> Open daily · Closes 12 AM (Midnight)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      <span>Estimated delivery time: 30–45 minutes within city limits</span>
+                      <span><strong>Price Range:</strong> {restaurantInfo.priceRange} ({restaurantInfo.priceReportedBy})</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <span><strong>Location:</strong> {restaurantInfo.address} (Plus Code: {restaurantInfo.plusCode})</span>
                     </div>
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3">
                     <a
-                      href="tel:+923017864478"
-                      className="px-6 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-[#0d0f11] font-semibold text-xs sm:text-sm tracking-wider uppercase transition-colors"
+                      href={`tel:${restaurantInfo.phoneRaw}`}
+                      className="px-6 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-[#0d0f11] font-semibold text-xs sm:text-sm tracking-wider uppercase transition-colors flex items-center gap-2"
                     >
-                      Call for Delivery (0301 7864478)
+                      <Phone size={15} />
+                      <span>Call for Takeout ({restaurantInfo.phone})</span>
                     </a>
                     <button
                       onClick={onOpenMenu}
                       className="px-6 py-2.5 rounded-full bg-white/10 text-white font-medium text-xs sm:text-sm tracking-wider uppercase hover:bg-white/20 transition-colors cursor-pointer"
                     >
-                      View Delivery Menu
+                      View Menu
                     </button>
                   </div>
                 </div>
@@ -294,8 +300,8 @@ export const EventsAndServices: React.FC<EventsAndServicesProps> = ({
                 <div className="lg:col-span-6">
                   <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10">
                     <img
-                      src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop"
-                      alt="Gourmet dining delivery"
+                      src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000&auto=format&fit=crop"
+                      alt="Domatos Pizza Dine-in and Takeout in Faisalabad"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover"
                     />

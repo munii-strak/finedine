@@ -3,7 +3,7 @@ export type Currency = 'PKR' | 'USD' | 'EUR';
 export interface Dish {
   id: string;
   name: string;
-  category: 'pasta' | 'grill' | 'breakfast' | 'dinner' | 'snacks' | 'burgers' | 'shawarma' | 'street-food' | 'dessert' | 'drinks' | 'wine';
+  category: 'pizza' | 'pasta' | 'grill' | 'breakfast' | 'dinner' | 'snacks' | 'burgers' | 'shawarma' | 'street-food' | 'dessert' | 'drinks' | 'wine';
   pricePKR: number;
   priceUSD: number;
   priceEUR: number;
@@ -60,6 +60,8 @@ export interface RestaurantInfo {
   rating: number;
   reviewCount: number;
   priceRange: string;
+  priceReportedBy?: string;
+  category?: string;
   services: string[];
   story: string;
   menuStory: string;

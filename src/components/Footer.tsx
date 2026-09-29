@@ -28,25 +28,25 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <div>
               <span className="font-cormorant text-4xl italic text-white font-normal block leading-none">
-                Fine Dine
+                Domatos
               </span>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#c6a869] font-medium font-sans mt-1 block">
-                By Bao G
+              <span className="text-xs uppercase tracking-[0.25em] text-[#c6a869] font-bold font-sans mt-1 block">
+                Pizza
               </span>
             </div>
             <p className="text-neutral-400 font-light max-w-sm text-xs sm:text-sm leading-relaxed">
-              Faisalabad's celebrated culinary destination on Susan Road. Famous for golden crispy fried & charcoal grilled fish, gourmet burgers, artisan shawarma, and late-night family gatherings.
+              Faisalabad's top-rated 4.9-star pizza and fast food restaurant on Dr. Tusi Rd. Famous for Royal Crown Crust pizzas, stuffed calzones, gourmet burgers, shawarma, and loaded pizza fries.
             </p>
 
             <div className="pt-1 flex flex-wrap gap-2 text-[11px] text-neutral-300">
               <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-medium flex items-center gap-1">
                 <span>🇵🇰</span>
-                <span>Available in Pakistan Only</span>
+                <span>Faisalabad, Pakistan</span>
               </span>
-              <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10">Dine-in</span>
-              <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10">Takeout</span>
-              <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10">Faisalabad Delivery</span>
-              <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">♿ Wheelchair Accessible</span>
+              <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10">✓ Dine-in</span>
+              <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10">✓ Takeout</span>
+              <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10">Dr. Tusi Rd Location</span>
+              <span className="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300">⭐ 4.9 Rating (18 Reviews)</span>
             </div>
 
             <div className="flex items-center gap-3 pt-2">
@@ -87,8 +87,8 @@ export const Footer: React.FC = () => {
             </h4>
             <div className="space-y-1.5 font-light">
               <p className="text-white font-normal">Monday – Sunday</p>
-              <p className="text-emerald-400 font-medium">1:00 PM – 1:00 AM</p>
-              <p className="text-neutral-400 text-[11px] pt-1">Open Daily · Closes 1:00 AM</p>
+              <p className="text-emerald-400 font-medium">1:00 PM – 12:00 AM</p>
+              <p className="text-neutral-400 text-[11px] pt-1">Open Daily · Closes 12 AM</p>
               <p className="text-[#c6a869] text-[11px]">Popular rush: 6:00 PM – 10:00 PM</p>
             </div>
           </div>
@@ -138,13 +138,13 @@ export const Footer: React.FC = () => {
               Family Feasts Club
             </h4>
             <p className="font-light text-[11px] leading-relaxed">
-              Subscribe for weekend chef specials, fish season inaugurations, and seasonal promotions in Faisalabad.
+              Subscribe for weekend pizza deals, 2-for-1 specials, and new crust releases in Faisalabad.
             </p>
 
             {isSubscribed ? (
               <div className="p-2.5 rounded-xl bg-[#1b251b] border border-[#b5c99a]/30 text-[#b5c99a] flex items-center gap-1.5 text-[11px]">
                 <Check size={14} />
-                <span>Subscribed to Fine Dine Gazette!</span>
+                <span>Subscribed to Domatos Pizza Deals!</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="space-y-2">
@@ -170,7 +170,7 @@ export const Footer: React.FC = () => {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[11px] font-light text-neutral-400">
-            &copy; {new Date().getFullYear()} Fine Dine By Bao G. Susan Road, Faisalabad, Pakistan · Available in Pakistan Only. All rights reserved.
+            &copy; {new Date().getFullYear()} Domatos Pizza. Dr. Tusi Rd, Faisalabad, Pakistan. All rights reserved.
           </p>
 
           <button

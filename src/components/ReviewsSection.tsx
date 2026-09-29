@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Star, ChevronLeft, ChevronRight, PenLine, X, CheckCircle, MapPin, ExternalLink } from 'lucide-react';
 import { Review } from '../types';
 import { initialReviews, restaurantInfo } from '../data/restaurantData';
+import { GoogleProfileCard } from './GoogleProfileCard';
 
 export const ReviewsSection: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>(initialReviews);
@@ -61,10 +62,10 @@ export const ReviewsSection: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xs uppercase tracking-[0.25em] text-[#c6a869] font-medium block">
-                Google Verified Reviews
+                Google Verified Profile
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#b5c99a]" />
-              <span className="text-xs text-neutral-400 font-light">Susan Road, Faisalabad</span>
+              <span className="text-xs text-neutral-400 font-light">Dr. Tusi Rd, Faisalabad, Pakistan</span>
             </div>
             <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-6xl italic text-white font-normal">
               What Our Visitors Say
@@ -96,127 +97,101 @@ export const ReviewsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Rating Banner Summary Card */}
-        <div className="mb-10 bg-[#13161a] border border-white/10 rounded-2xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="flex items-baseline gap-2">
-              <span className="text-3xl sm:text-4xl font-semibold text-white font-sans">
-                {restaurantInfo.rating.toFixed(1)}
+        {/* Content Layout: Left Google Profile Card from Screenshot, Right Review Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Google Maps Profile Card Widget */}
+          <div className="lg:col-span-5 w-full">
+            <div className="mb-3 flex items-center justify-between">
+              <span className="text-xs uppercase tracking-wider text-[#b5c99a] font-medium flex items-center gap-1.5">
+                <span>📍</span>
+                <span>Google Business Profile</span>
               </span>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1 text-[#c6a869]">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={15}
-                      className={i < Math.floor(restaurantInfo.rating) ? 'fill-[#c6a869]' : 'text-neutral-600'}
-                    />
-                  ))}
-                </div>
-                <span className="text-[11px] text-neutral-400">
-                  {restaurantInfo.reviewCount} customer reviews
-                </span>
-              </div>
+              <span className="text-[11px] text-neutral-400 font-light">Dr. Tusi Rd, Faisalabad</span>
             </div>
-
-            <div className="hidden md:block w-px h-8 bg-white/10" />
-
-            <div className="hidden md:flex flex-col text-xs text-neutral-300">
-              <span className="text-white font-medium">{restaurantInfo.priceRange}</span>
-              <span className="text-[11px] text-neutral-400">Reported price per person</span>
-            </div>
+            <GoogleProfileCard />
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 text-xs text-neutral-300 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
-              <MapPin size={13} className="text-[#b5c99a]" />
-              <span>Officer Colony 1, Faisalabad</span>
-            </div>
-
-            <a
-              href={restaurantInfo.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-[#b5c99a] hover:text-white flex items-center gap-1 transition-colors underline"
-            >
-              <span>View on Maps</span>
-              <ExternalLink size={12} />
-            </a>
-          </div>
-        </div>
-
-        {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left Decorative Image Tile */}
-          <div className="hidden lg:block lg:col-span-4">
-            <div className="relative h-full rounded-3xl overflow-hidden border border-white/10 min-h-[360px]">
-              <img
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop"
-                alt="Tropical foliage and warm sunlight at Fine Dine restaurant"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover filter brightness-85 contrast-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-center">
-                <span className="text-[10px] uppercase tracking-widest text-[#b5c99a] font-medium block mb-1">
-                  Fine Dine By Bao G
-                </span>
-                <p className="font-cormorant italic text-xl text-white mb-2">
-                  "Best Restaurant in Faisalabad"
-                </p>
-                <p className="text-xs text-neutral-300 font-light max-w-xs mx-auto">
-                  Susan Road, opposite Faizan e Madina. Open until 1:00 AM.
-                </p>
-                <div className="flex items-center justify-center gap-1 mt-3 text-[#c6a869]">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} className="fill-[#c6a869]" />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Review Cards */}
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-full">
-              {displayedReviews.map((rev) => (
-                <motion.div
-                  key={`${rev.id}-${currentIndex}`}
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4 }}
-                  className="bg-[#13161a] border border-white/10 rounded-3xl p-7 flex flex-col justify-between shadow-xl"
-                >
+          {/* Right Review Cards & Stats */}
+          <div className="lg:col-span-7 flex flex-col justify-between h-full space-y-6">
+            <div className="bg-[#13161a] border border-white/10 rounded-3xl p-6 sm:p-7 shadow-xl">
+              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/5 pb-4 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-semibold text-white font-sans">
+                      {restaurantInfo.rating.toFixed(1)}
+                    </span>
+                    <Star size={20} className="fill-[#c6a869] text-[#c6a869]" />
+                  </div>
                   <div>
-                    <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-4">
-                      <span className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-white">
-                        {rev.author}
-                      </span>
-                      <div className="flex items-center gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            size={14}
-                            className={
-                              i < rev.rating
-                                ? 'text-[#c6a869] fill-[#c6a869]'
-                                : 'text-neutral-600'
-                            }
-                          />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed">
-                      "{rev.comment}"
-                    </p>
+                    <p className="text-white text-sm font-medium">Fast Food Restaurant</p>
+                    <p className="text-neutral-400 text-xs">{restaurantInfo.reviewCount} Verified Ratings</p>
                   </div>
+                </div>
 
-                  <div className="pt-6 border-t border-white/5 flex items-center justify-between text-[11px] text-neutral-400">
-                    <span className="text-[#b5c99a]">{rev.visitedFor}</span>
-                    <span>{rev.date}</span>
-                  </div>
-                </motion.div>
-              ))}
+                <div className="text-xs text-right">
+                  <p className="text-[#b5c99a] font-medium">✓ Dine-in · ✓ Takeout</p>
+                  <p className="text-neutral-400 text-[11px] font-mono">{restaurantInfo.priceRange}</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {displayedReviews.map((rev) => (
+                  <motion.div
+                    key={`${rev.id}-${currentIndex}`}
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4 }}
+                    className="bg-[#181c21] border border-white/5 rounded-2xl p-5 flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between border-b border-white/5 pb-3 mb-3">
+                        <span className="font-mono text-xs font-semibold tracking-wider text-white">
+                          {rev.author}
+                        </span>
+                        <div className="flex items-center gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              size={12}
+                              className={
+                                i < rev.rating
+                                  ? 'text-[#c6a869] fill-[#c6a869]'
+                                  : 'text-neutral-600'
+                              }
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-neutral-300 text-xs font-light leading-relaxed">
+                        "{rev.comment}"
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-neutral-400 mt-4">
+                      <span className="text-[#b5c99a]">{rev.visitedFor}</span>
+                      <span>{rev.date}</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Google Reviews Callout Banner */}
+            <div className="bg-[#182317] border border-emerald-500/30 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <h4 className="font-cormorant text-2xl italic text-white font-normal">
+                  Visited Domatos Pizza?
+                </h4>
+                <p className="text-xs text-neutral-300 font-light mt-1">
+                  Share your dining experience on Google Maps or rate our Royal Crown Crust pizzas & loaded fries.
+                </p>
+              </div>
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-6 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-xs tracking-wider uppercase transition-colors shrink-0 cursor-pointer"
+              >
+                Write a Review
+              </button>
             </div>
           </div>
         </div>

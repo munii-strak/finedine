@@ -54,17 +54,17 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
             <span className="hidden sm:inline text-neutral-500">|</span>
             <span className="text-neutral-300 font-light truncate hidden sm:inline">
-              Susan Road, Officer Colony 1, Faisalabad · Dine-in, Takeaway & Local Delivery
+              Dr. Tusi Rd, Faisalabad · Fast Food Restaurant · Dine-in & Takeout
             </span>
           </div>
           <div className="flex items-center gap-3 shrink-0 text-[11px]">
-            <span className="text-[#c6a869] font-medium hidden md:inline">Currency: PKR (Rs)</span>
+            <span className="text-[#c6a869] font-medium hidden md:inline">Rs 1–1,000 / person</span>
             <a
-              href="tel:+923017864478"
+              href="tel:+923317666919"
               className="text-[#b5c99a] hover:text-white transition-colors font-medium flex items-center gap-1"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>0301 7864478</span>
+              <span>0331 7666919</span>
             </a>
           </div>
         </div>
@@ -80,16 +80,16 @@ export const Header: React.FC<HeaderProps> = ({
           }}
           className="group flex flex-col justify-center focus:outline-none"
         >
-          <div className="flex items-baseline gap-1.5">
+          <div className="flex items-baseline gap-2">
             <span className="font-cormorant text-2xl sm:text-3xl lg:text-4xl italic font-normal tracking-wide text-[#b5c99a] group-hover:text-[#d8f3dc] transition-colors leading-none">
-              Fine Dine
+              Domatos
             </span>
-            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#c6a869] font-medium font-sans">
-              By Bao G
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#c6a869] font-bold font-sans">
+              Pizza
             </span>
           </div>
           <span className="text-[9px] uppercase tracking-[0.18em] text-neutral-400 font-light hidden sm:block">
-            Susan Road, Faisalabad, Pakistan
+            Dr. Tusi Rd, Faisalabad · 4.9 ★ (18)
           </span>
         </a>
 
@@ -121,7 +121,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => scrollToSection('events')}
             className="text-sm tracking-wide text-[#a0a5ad] hover:text-[#b5c99a] transition-colors focus:outline-none font-normal cursor-pointer"
           >
-            Services & Delivery
+            Services & Takeout
           </button>
           <button
             id="nav-link-reservation"

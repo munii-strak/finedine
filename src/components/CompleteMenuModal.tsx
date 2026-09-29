@@ -36,16 +36,10 @@ export const CompleteMenuModal: React.FC<CompleteMenuModalProps> = ({
 
   const categories = [
     { id: 'all', label: 'All Offerings' },
-    { id: 'breakfast', label: '🥞 Breakfasts' },
-    { id: 'dinner', label: '🥩 Dinners' },
-    { id: 'snacks', label: '🧀 Artisan Snacks' },
-    { id: 'pasta', label: '🍝 Pastas' },
-    { id: 'grill', label: '🔥 Grill & Steaks' },
-    { id: 'burgers', label: '🍔 Zinger & Burgers' },
-    { id: 'shawarma', label: '🌯 Shawarma & Wraps' },
-    { id: 'street-food', label: '🍟 Loaded Fries & Bites' },
-    { id: 'dessert', label: '🍰 Desserts' },
-    { id: 'drinks', label: '🍸 Cocktails & Wines' },
+    { id: 'pizza', label: '🍕 Pizzas & Calzones' },
+    { id: 'street-food', label: '🍟 Loaded Pizza Fries' },
+    { id: 'snacks', label: '🥖 Cheesy Garlic Bread' },
+    { id: 'drinks', label: '🥤 Chilled Drinks & Coolers' },
   ];
 
   const filteredDishes = useMemo(() => {
@@ -90,14 +84,14 @@ export const CompleteMenuModal: React.FC<CompleteMenuModalProps> = ({
             <div>
               <div className="flex items-center gap-2 mb-0.5">
                 <span className="text-xs uppercase tracking-[0.25em] text-[#b5c99a] font-light block">
-                  Fine Dine By Bao G
+                  Domatos Pizza
                 </span>
                 <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-medium">
-                  🇵🇰 Available in Pakistan Only
+                  🇵🇰 Faisalabad, Pakistan
                 </span>
               </div>
               <h2 className="font-cormorant text-2xl sm:text-3xl italic text-white font-normal">
-                Menu & Offerings · Susan Road, Faisalabad
+                Menu & Offerings · Dr. Tusi Rd, Faisalabad
               </h2>
             </div>
             <button
@@ -226,7 +220,7 @@ export const CompleteMenuModal: React.FC<CompleteMenuModalProps> = ({
                           referrerPolicy="no-referrer"
                           onError={(e) => {
                             e.currentTarget.src =
-                              'https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=800&auto=format&fit=crop';
+                              'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&auto=format&fit=crop';
                           }}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
@@ -279,7 +273,7 @@ export const CompleteMenuModal: React.FC<CompleteMenuModalProps> = ({
           {/* Modal Footer CTA */}
           <div className="p-4 sm:p-5 border-t border-white/10 bg-[#15191e] flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-xs text-neutral-400 font-light text-center sm:text-left">
-              Fresh farm ingredients sourced directly from the Fine Dine private greenhouse estate.
+              Fresh 100% mozzarella cheese, hand-stretched dough, and premium halal meats prepared daily.
             </p>
             <button
               onClick={() => {

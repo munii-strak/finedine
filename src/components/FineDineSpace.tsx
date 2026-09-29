@@ -14,13 +14,13 @@ export const FineDineSpace: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center mb-12">
         <span className="text-xs uppercase tracking-[0.3em] text-[#b5c99a] font-medium block mb-2">
-          Sanctuary of Taste & Nature
+          Sanctuary of Taste & Comfort
         </span>
         <h2 className="font-cormorant text-4xl sm:text-5xl md:text-6xl italic text-white">
-          Fine Dine space
+          Domatos Dining Space
         </h2>
         <p className="max-w-xl mx-auto text-sm text-neutral-400 mt-3 font-light">
-          An ethereal garden terrace where golden sunlight filters through vine pergolas, inviting you into peaceful harmony.
+          A cozy, vibrant restaurant interior with welcoming seating, warm ambient lighting, and freshly prepared stone-baked pizzas and specialties on Dr. Tusi Rd.
         </p>
       </div>
 
@@ -28,8 +28,8 @@ export const FineDineSpace: React.FC = () => {
         <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_70px_rgba(0,0,0,0.95)] group cursor-pointer">
           {/* Main Atmosphere Image */}
           <img
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop"
-            alt="Fine Dine space outdoor garden dining terrace with sun rays"
+            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop"
+            alt="Domatos Pizza cozy dining space with warm ambiance and colorful seating"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-1000 ease-out"
           />
@@ -43,10 +43,10 @@ export const FineDineSpace: React.FC = () => {
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
             <div className="text-center px-4">
               <span className="font-cormorant text-4xl sm:text-6xl md:text-7xl italic font-light text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)] tracking-wider">
-                Fine Dine space
+                Domatos Pizza
               </span>
               <span className="block text-xs uppercase tracking-[0.4em] text-[#d8f3dc] mt-2 font-medium opacity-90">
-                Where culinary art meets serenity
+                Freshly baked · Dr. Tusi Rd, Faisalabad
               </span>
             </div>
           </div>

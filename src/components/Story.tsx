@@ -24,7 +24,7 @@ export const Story: React.FC<StoryProps> = ({ onOpenReservation }) => {
                   Our Delicious Story
                 </span>
                 <span className="font-cormorant text-5xl sm:text-6xl lg:text-7xl italic block text-outline-layered tracking-tight leading-tight">
-                  Fine Dine By Bao G
+                  Domatos Pizza
                 </span>
               </div>
               <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-6xl italic text-white font-normal leading-tight">
@@ -76,15 +76,15 @@ export const Story: React.FC<StoryProps> = ({ onOpenReservation }) => {
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=1200&auto=format&fit=crop"
-                  alt="Fine Dine restaurant cozy dining room on Susan Road Faisalabad"
+                  alt="Domatos Pizza fast food restaurant cozy dining room on Dr. Tusi Rd Faisalabad"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-neutral-300 bg-black/60 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/10">
-                <span className="font-cormorant italic text-sm text-white">Susan Road Family Dining</span>
-                <span className="text-[#b5c99a] font-medium">Wheelchair Accessible</span>
+                <span className="font-cormorant italic text-sm text-white">Dr. Tusi Rd Dining</span>
+                <span className="text-[#b5c99a] font-medium">✓ Dine-in · ✓ Takeout</span>
               </div>
             </div>
           </div>
@@ -111,8 +111,8 @@ export const Story: React.FC<StoryProps> = ({ onOpenReservation }) => {
               <div>
                 <h3 className="font-cormorant text-xl text-white font-normal mb-1">Open Hours</h3>
                 <p className="text-xs sm:text-sm text-emerald-400 font-medium">{restaurantInfo.hours}</p>
-                <p className="text-xs text-neutral-400 font-light mt-1">Popular times: Saturdays 6 PM – 10 PM</p>
-                <p className="text-[11px] text-neutral-400 mt-0.5">Late night dining until 1:00 AM</p>
+                <p className="text-xs text-neutral-400 font-light mt-1">Popular times: Evenings 6 PM – 11 PM</p>
+                <p className="text-[11px] text-neutral-400 mt-0.5">Closes daily at 12:00 AM (Midnight)</p>
               </div>
             </div>
 
@@ -121,15 +121,15 @@ export const Story: React.FC<StoryProps> = ({ onOpenReservation }) => {
                 <PhoneCall size={22} />
               </div>
               <div>
-                <h3 className="font-cormorant text-xl text-white font-normal mb-1">Direct Call & WhatsApp</h3>
+                <h3 className="font-cormorant text-xl text-white font-normal mb-1">Direct Call</h3>
                 <a
                   href={`tel:${restaurantInfo.phoneRaw}`}
                   className="text-xs sm:text-sm text-neutral-200 font-medium hover:text-[#b5c99a] transition-colors block"
                 >
                   {restaurantInfo.phone}
                 </a>
-                <p className="text-xs text-neutral-400 font-light mt-1">Dine-in, Takeout & Fast Delivery</p>
-                <p className="text-[11px] text-[#c6a869] mt-0.5">{restaurantInfo.priceRange}</p>
+                <p className="text-xs text-neutral-400 font-light mt-1">✓ Dine-in · ✓ Takeout</p>
+                <p className="text-[11px] text-[#c6a869] mt-0.5">{restaurantInfo.priceRange} ({restaurantInfo.priceReportedBy})</p>
               </div>
             </div>
           </div>

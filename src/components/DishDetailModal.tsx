@@ -47,7 +47,7 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
               referrerPolicy="no-referrer"
               onError={(e) => {
                 e.currentTarget.src =
-                  'https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=800&auto=format&fit=crop';
+                  'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&auto=format&fit=crop';
               }}
               className="w-full h-full object-cover filter brightness-95 contrast-105"
             />

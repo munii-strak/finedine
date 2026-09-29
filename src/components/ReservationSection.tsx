@@ -64,8 +64,8 @@ export const ReservationSection: React.FC = () => {
       {/* Background with moody lighting */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop"
-          alt="Fine Dine By Bao G Susan Road Faisalabad ambient restaurant seating"
+          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop"
+          alt="Domatos Pizza Dr. Tusi Rd Faisalabad ambient restaurant seating"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover filter brightness-[0.2] contrast-125"
         />
@@ -75,13 +75,13 @@ export const ReservationSection: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10">
           <span className="text-xs uppercase tracking-[0.3em] text-[#b5c99a] font-medium block mb-2">
-            Fine Dine By Bao G
+            Domatos Pizza
           </span>
           <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-6xl italic text-white font-normal">
             Reserve a Table
           </h2>
           <p className="max-w-md mx-auto text-xs sm:text-sm text-neutral-400 mt-3 font-light">
-            Susan Road, opposite Faizan e Madina, Faisalabad. Open daily with dining until 1:00 AM.
+            Dr. Tusi Rd, Faisalabad, Pakistan. Open daily with dining until 12 AM.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ export const ReservationSection: React.FC = () => {
             <div>
               <span className="font-semibold">Available in Pakistan Only</span>
               <span className="text-neutral-300 text-[11px] block sm:inline sm:ml-2">
-                Table bookings & services valid strictly for our Susan Road branch in Faisalabad, Pakistan
+                Table bookings & services valid strictly for our Dr. Tusi Rd branch in Faisalabad, Pakistan
               </span>
             </div>
           </div>
@@ -146,7 +146,7 @@ export const ReservationSection: React.FC = () => {
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+92 301 7864478"
+                  placeholder="+92 331 7666919"
                   className="w-full bg-[#181c21] border border-white/10 rounded-2xl px-4 py-3 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#b5c99a] transition-colors"
                 />
               </div>
@@ -191,7 +191,7 @@ export const ReservationSection: React.FC = () => {
               <div>
                 <label className="block text-xs uppercase tracking-wider text-neutral-300 mb-2 font-light flex items-center gap-1.5">
                   <Clock size={14} className="text-[#b5c99a]" />
-                  <span>Time (Open till 1 AM)</span>
+                  <span>Time (Open till 12 AM)</span>
                 </label>
                 <select
                   value={time}
@@ -316,10 +316,10 @@ export const ReservationSection: React.FC = () => {
                   Table Reserved Successfully
                 </span>
                 <h3 className="font-cormorant text-3xl italic text-white font-normal">
-                  Fine Dine By Bao G
+                  Domatos Pizza
                 </h3>
                 <p className="text-xs text-neutral-400 mt-1">
-                  Susan Road, opposite Faizan e Madina, Faisalabad
+                  Dr. Tusi Rd, Faisalabad, Pakistan
                 </p>
               </div>
 
@@ -354,7 +354,7 @@ export const ReservationSection: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-center border-b border-white/5 pb-2">
                   <span className="text-neutral-400">Location</span>
-                  <span className="text-emerald-400 font-medium">Susan Road, Faisalabad, Pakistan (Pakistan Only)</span>
+                  <span className="text-emerald-400 font-medium">Dr. Tusi Rd, Faisalabad, Pakistan (Pakistan Only)</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-neutral-400">Restaurant Contact</span>
@@ -376,7 +376,7 @@ export const ReservationSection: React.FC = () => {
                   className="w-full py-2.5 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs text-center flex items-center justify-center gap-1.5 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   <MapPin size={13} className="text-[#b5c99a]" />
-                  <span>Get Directions to Susan Road on Google Maps</span>
+                  <span>Get Directions to Dr. Tusi Rd on Google Maps</span>
                 </a>
               </div>
             </motion.div>
